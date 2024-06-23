@@ -1,0 +1,6 @@
+import{a as i}from"./assets/vendor-a2e8d7fa.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const c of t.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&n(c)}).observe(document,{childList:!0,subtree:!0});function s(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=s(e);fetch(e.href,t)}})();const u=i.create({baseURL:"https://dummyjson.com"});async function l(){return(await u.get("/products")).data}function a(o){return o.map(({title:r,description:s,price:n})=>`<li>
+        <h3>${r}</h3>
+        <p>${s}</p>
+        <p>${n}</p>
+      </li>`).join("")}const d={allProducts:document.querySelector("#allProducts")};async function f(){const o=await l(),r=a(o.products);d.allProducts.innerHTML=r}f();
+//# sourceMappingURL=commonHelpers.js.map
