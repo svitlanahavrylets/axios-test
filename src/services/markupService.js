@@ -9,3 +9,9 @@ export function createProductsMarkup(data) {
     )
     .join('');
 }
+
+export function createMarkupProduct({ title, description, price }) {
+  return ` <h3>${title}</h3>
+        <p>${description}</p>
+        <p>${price}</p>`;
+}
