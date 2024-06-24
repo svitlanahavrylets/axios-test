@@ -4,6 +4,7 @@ import { getProducts } from './requests/products';
 import { createProductsMarkup } from './services/markupService';
 import { refs } from './js/refs';
 import { onSingleProductSubmit } from './js/onSingleProductSubmit';
+import { deleteProductById } from './js/deleteProductById';
 
 async function renderProducts() {
   try {
@@ -11,9 +12,11 @@ async function renderProducts() {
     const markup = createProductsMarkup(data.products);
     refs.allProducts.innerHTML = markup;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 // renderProducts();
 
 refs.formSingleProductForm.addEventListener('submit', onSingleProductSubmit);
+
+refs.deletionProductFormElem.addEventListener('submit', deleteProductById);
